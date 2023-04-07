@@ -1,0 +1,243 @@
+#div1 {
+    padding-top: 15px;
+margin-top:25px;
+text-align:center;
+padding-left:20px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 15px white;
+  width: 200px;
+  height: 50px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+  transition: hover , .5s;
+  display:flex;
+}
+#div1:hover{
+    font-size: 25px;
+    padding-top: 25px;
+    margin-top:25px;
+text-align:center;
+padding-left:300px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 25px rgb(255, 155, 6);
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 214, 6);
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+}
+
+#div2 {
+    padding-top: 15px;
+margin-top:25px;
+text-align:center;
+padding-left:20px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 15px rgb(92, 92, 92);
+  width: 200px;
+  height: 50px;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+  transition: hover , .5s;
+  display:flex;
+}
+#div2:hover{
+    font-size: 25px;
+    padding-top: 25px;
+    margin-top:25px;
+text-align:center;
+padding-left:300px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 25px rgb(255, 155, 6);
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 214, 6);
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+}
+
+#div3 {
+    padding-top: 15px;
+margin-top:25px;
+text-align:center;
+padding-left:20px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 15px white;
+  width: 200px;
+  height: 50px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+  transition: hover , .5s;
+  display:flex;
+}
+#div3:hover{
+    font-size: 25px;
+    padding-top: 25px;
+    margin-top:25px;
+text-align:center;
+padding-left:300px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 25px rgb(255, 155, 6);
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 214, 6);
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+}
+
+#div4 {
+    padding-top: 15px;
+margin-top:25px;
+text-align:center;
+padding-left:20px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 15px rgb(90, 90, 90);
+  width: 200px;
+  height: 50px;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+  transition: hover , .5s;
+  display:flex;
+}
+#div4:hover{
+    font-size: 20px;
+    padding-top: 25px;
+    margin-top:25px;
+text-align:center;
+padding-left:300px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 25px rgb(255, 155, 6);
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 214, 6);
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+}
+
+#div5 {
+    padding-top: 15px;
+margin-top:25px;
+text-align:center;
+padding-left:20px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 15px white;
+  width: 200px;
+  height: 50px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+  transition: hover , .5s;
+  display:flex;
+}
+#div5:hover{
+    font-size: 25px;
+    padding-top: 25px;
+    margin-top:25px;
+text-align:center;
+padding-left:300px;
+padding-right:20px;
+border-radius:15px;
+box-shadow: 5px 5px 25px rgb(255, 155, 6);
+  width: 200px;
+  height: 50px;
+  background: rgb(255, 214, 6);
+  color: black;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 2s ease-out;
+}
+.buttonscollection{
+    text-align: center;
+    font-family: cursive;
+}
+.Homeinfo{
+ 
+    width: 50%;
+    text-align: center;
+    
+   
+}
+.tes{
+
+    font-family:monospace;
+    font-size: 50px;;
+    margin-left: 700px;
+    color: white;
+    text-shadow: 5px 5px 15px white;
+}
+.sphere{
+
+    margin-left: 950px;
+    margin-bottom: 100px;    
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 50px #fff,      /* inner white */
+      inset 20px 0 80px rgb(255, 0, 89),   /* inner left magenta short */
+      inset -20px 0 80px rgb(255, 234, 0),  /* inner right cyan short */
+      inset 20px 0 300px rgb(255, 0, 102),  /* inner left magenta broad */
+      inset -20px 0 300px rgb(225, 255, 0), /* inner right cyan broad */
+      0 0 50px #ffffff,            /* outer white */
+      -10px 0 80px rgb(253, 205, 233),        /* outer left magenta */
+      10px 0 80px rgb(242, 255, 0);         /* outer right cyan */
+  
+}
+.int{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 200px;
+  font-family: cursive;
+  color:white
+}
+.int:hover{
+  color: black;
+}
+
+.blk{
+  margin-top: 70px;
+  width: 100%;
+  height: 800px;
+  background-color: black;
+  margin-bottom: 50px;
+  transition: hover,0.5s;
+}
+.blk:hover{
+  color: black;
+  margin-top: 70px;
+  width: 100%;
+  height: 800px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+}

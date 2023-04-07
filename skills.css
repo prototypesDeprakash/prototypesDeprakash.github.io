@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+}
+.wd{
+    font-family:monospace;
+    font-size: 35px;
+}
+.wl{
+    font-family:cursive;
+    font-size: 25px;
+}
+img{
+    width: 100px;
+    margin-left: 50px;
+}

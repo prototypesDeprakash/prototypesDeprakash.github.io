@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+    background-image: url('wave.png');
+   
+}
+.container{
+    
+    background-color: black;
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: hover , 5s;
+}
+.container:hover{
+   
+    box-shadow:  20px 20px 15px  rgb(96, 96, 96);
+   
+}
+
+
+.textn{
+    color: white;
+    margin-left: 100px;
+}
+.nik{
+    
+    margin-left: 25px;
+    position: relative;
+    width: 260px;
+
+}
+.size{
+    color: white;
+    margin-left: 100px;
+}
+.color{
+    color: white;
+    margin-left: 100px;
+}
+.cop{
+    margin-left: 1px;
+    border-radius: 15px;
+}
+.linkb{
+    margin-bottom: 10px;
+    margin-left: 100px;
+    padding-top: 10px;
+    
+}
+.but{
+    background-color: greenyellow;
+    margin-top: -5px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 10px;
+    transition: hover , 1s;
+    
+
+}
+.but:hover{
+    background-color: rgb(123, 205, 0);
+    cursor: pointer;
+}
+
+.oi{
+    
+    border-style: none;
+    
+padding-left: 5px;
+padding-right: 5px;
+    background-color: #232323;
+    
+    
+}
+.container{
+
+  
+  left: 0;
+  width: 200px;
+  width: 320px;
+ height: 450px;
+ 
+  transition: .5s;
+}
+.container::after,.container::before{
+    content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: rgb(0, 0, 0);
+
+}
+.container::before{
+    border-radius: 45%;
+    background: rgb(255, 255, 255);
+    animation: animate 5s linear infinite;
+}
+.container::after{
+    border-radius: 40%;
+  background: rgba(230, 230, 230, 0);
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+.container{
+    box-shadow: 5px 5px 15px rgb(108, 108, 108);
+}
+
+
