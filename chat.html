@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatChat</title>
+</head>
+<body>
+ <h1>Global Chat</h1>   
+<input type="text" id="text">
+<button id="submit">Send</button>
+<div  id="dis"></div>
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getDatabase , set,ref,push,child,onValue,onChildAdded , remove} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyARF5AcxyVf7jkySbOmYYHHf_bo1sz450E",
+      authDomain: "quickchat-fc6da.firebaseapp.com",
+      projectId: "quickchat-fc6da",
+      storageBucket: "quickchat-fc6da.appspot.com",
+      messagingSenderId: "82200541265",
+      appId: "1:82200541265:web:c3654bd0bb016fece7a070",
+      measurementId: "G-FV65QEFRGZ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    var user_name = prompt("Say Your name");
+    submit.addEventListener('click',(e)=>{
+var message = document.getElementById('text').value;
+const id = push(child(ref(database),'messages')).key;
+
+function f(){
+    var loc =ref(database,'messages/')
+    remove(loc);
+}
+
+
+set(ref(database,'messages/' +id),{
+    name:user_name,
+    message:message
+});
+
+
+document.getElementById("text").value="";
+
+    });
+
+const newMsgg=ref(database,'messages/');
+onChildAdded(newMsgg,(data)=>{
+    document.getElementById('dis').innerHTML+=data.val().name+" : "+data.val().message+"<br>"; 
+
+    console.log("running")
+});
+
+
+
+
+  </script>
+  <style>
+    *{
+        font-family: monospace;
+        text-align: center;
+        font-size: 20px;
+        
+    }
+    input{
+        margin-top: 100px;
+    }
+  </style>
+</body>
+</html>
