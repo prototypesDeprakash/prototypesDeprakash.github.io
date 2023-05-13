@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic-tac-toe</title>
+    <link rel="icon" href="tic.png" type="image/x-icon"/>
+    <script src="tictactoe.js"></script>
+</head>
+<body>
+    <h1>Toe-Tac-Tic</h1>
+  <div class="player_details">
+    <div class="p1">player_1</div>
+    <div class="p2">player_2</div>
+  </div>
+    <div class="master">
+        <div class="master1">
+            <button id="e1" onclick="e1click() & player_find() &bolcheck()"></button>
+            <button id="e2" onclick="e2click() & player_find() &bolcheck()"></button>
+            <button id="e3" onclick="e3click() & player_find() &bolcheck()"></button>
+            
+        </div>
+        <div class="master2">
+            <button id="e4" onclick="e4click() & player_find() &bolcheck()"></button>
+            <button id="e5" onclick="e5click() & player_find() &bolcheck()"></button>
+            <button id="e6" onclick="e6click() & player_find() &bolcheck()"></button>
+        </div>
+        <div class="master3">
+            <button id="e7" onclick="e7click() & player_find() &bolcheck()"></button>
+            <button id="e8" onclick="e8click() & player_find() &bolcheck()"></button>
+            <button id="e9" onclick="e9click() & player_find() &bolcheck()"></button>
+        </div>
+
+    </div>
+   <div class="display_unit">
+    <h1 id="disp"></h1>
+   </div>
+
+</body>
+<style>
+    .master{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: max-content;
+        margin-top: 50px;
+    }
+    button{
+        border-style: none;
+        padding:  55px;
+        border-radius: 15px;
+        margin-top: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    sup{
+        color: white;
+    }
+    .p1{
+        text-align: center;
+        font-size: 25px;
+        font-family: cursive;
+        width: 150px;
+        background-color: white;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .p2{
+        color: white;
+        border-style: ridge;
+        border-color: white;
+        text-align: center;
+        font-size: 25px;
+        font-family: cursive;
+        margin-top: 10px;
+        width: 150px;
+        background-color: rgb(0, 0, 0);
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1{
+        margin-top: 100px;
+        text-align: center;
+        font-size: 26px;
+        color:white;
+        font-family: monospace;
+    }
+    body{
+        background-color: rgb(32, 31, 31);
+    }
+    
+   
+    
+</style>
+</html>
