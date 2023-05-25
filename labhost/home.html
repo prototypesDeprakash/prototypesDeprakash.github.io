@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End-LabWorks</title>
+</head>
+<body>
+    <h1 class="cent">Front-end-lab exercises <sub style="font-size: 20px;">-by Prakash</sub></h1>
+    <a href="ex1.html"><button>exercise-1</button> </a>
+    <br>
+    <a href="ex2.html"><button>exercise-2</button> </a>
+    <br>
+    <a href="ex3.html"><button>exercise-3</button> </a>
+    <br>
+    <a href="ex4.html"><button>exercise-4</button> </a>
+    <br>
+    <a href="ex5.html"><button>exercise-5</button> </a>
+    <br>
+    <a href="ex4.html"><button>exercise-6</button> </a>
+    <br>
+    <a href="ex7.html"><button>exercise-7</button> </a>
+    <br>
+    <a href="ex8.html"><button>exercise-8</button> </a>
+    <br>
+    <a href="exno9.html"><button>exercise-9</button> </a>
+
+</body>
+<style>
+    .cent{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+         width: max-content;
+         background-color: rgb(213, 2, 255);
+         padding: 10px 20px;
+         border-radius: 35px;
+         color: rgb(255, 255, 255);
+    }
+    *{
+        cursor:crosshair;
+    }
+    button{
+        padding: 20px;
+        display: block;
+        transition: hover,0.5s;
+        border-style: none;
+        background-color: rgb(212, 0, 255);
+        font-size: 18px;
+        color: white;
+
+        border-bottom-right-radius: 25px;
+        
+
+    }
+    a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    button:hover{
+        color: black;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        padding-left: 250px;
+        cursor: pointer;
+        box-shadow: 5px 2px 15px rgb(217, 0, 255);
+        background-color: rgb(255, 255, 255);
+        
+    }
+    body{
+        background-image: url("bg.png");
+        animation: moveBackground 20s linear infinite;
+       
+    }
+    @keyframes moveBackground {
+  0% { background-position: 0 100%; }
+  100% { background-position: 100% 0; }
+}
+</style>
+</html>

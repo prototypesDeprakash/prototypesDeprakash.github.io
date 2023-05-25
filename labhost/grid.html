@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+</head>
+<body>
+    <div class="master">
+
+
+   
+    <div class="grd">1</div>
+    <div class="grd">2</div>
+    <div class="grd">3</div>
+    <div class="grd">4</div>
+    <div class="grd">5</div>
+    <div class="grd">6</div>
+    <div class="grd">1</div>
+    <div class="grd">2</div>
+    <div class="grd">3</div>
+    <div class="grd">4</div>
+    <div class="grd">5</div>
+    <div class="grd">6</div>
+    <div class="grd">1</div>
+    <div class="grd">2</div>
+    <div class="grd">3</div>
+    <div class="grd">4</div>
+    <div class="grd">5</div>
+    <div class="grd">6</div>
+    <div class="grd">5</div>
+    <div class="grd">6</div>
+</div>
+</body>
+<style>
+    .master{
+        display: grid;
+  grid-template-columns: 100px auto auto auto ;
+
+  padding: 10px;
+    }
+    .grd{
+        background-color: rgb(255, 255, 255);
+  animation-name: example;
+  animation-duration: 8s;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  animation-iteration-count: infinite;
+  font-size: 30px;
+  text-align: center;
+    }
+
+   
+
+
+@keyframes example {
+  50% {background-color: rgb(179, 0, 255);}
+  100% {background-color: rgb(255, 255, 255);}
+  
+}
+</style>
+</html>

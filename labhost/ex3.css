@@ -1,0 +1,80 @@
+.buy{
+      background-color: rgb(0, 0, 0);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-color: aliceblue ;
+      font-size: 25px;
+      color: aliceblue;
+      margin-top: 50px;
+      border-radius: 15px;
+}
+.hid{
+
+      
+
+      margin-top: 50px;
+      font-size: 25px;
+      margin-left: 150px;
+      background-color: rgba(255, 255, 255, 0);
+
+}
+.hid .p2{
+      font-family: monospace;
+      color: rgb(255, 255, 255);
+}
+h3.he1{text-align: center;
+      font-family: sans-serif;
+      text-align: center;
+      color:white}
+h1{-webkit-text-stroke-width: 0.15px;
+      -webkit-text-stroke-color: black;
+      text-size-adjust: 50px;}
+table.t{width:  auto;
+      margin-left: auto; 
+      margin-right: auto;
+      border: 0 px;}
+div.a{background: rgba(255, 255, 255, 0.203);
+      width: 75%;
+      color: rgb(231, 231, 231);
+      margin-left: auto;
+     margin-right: auto;}
+q{padding: 50px;}
+th{background:rgb(255, 0, 0) 100%;
+      border:0px;
+      text-align: center;
+      font-size: 25px;
+      font-family: Felix Titling;
+      color: rgb(255, 255, 255)}
+td{ border:0px;
+      font-size: 20px;
+      padding: 15px;
+      font-family: Calibri;}
+img{display: block;
+      margin-left: auto;
+      margin-right: auto;
+    width: 50% }
+.add{ margin-left: auto; 
+      margin-right: auto;
+      display: block;
+      width: 400px;
+      height: 100px;
+      animation-iteration-count: infinite;
+     animation-name: example;
+     animation-duration: 4s;
+      border-radius: 20px;
+      border-style: none;
+      font-size: 40px;
+
+      transition: hover,0.2s;
+     }
+     button:hover{
+      box-shadow: 1px 1px 30px white;
+     }
+p.p2{ color: white;
+       font-family: MS Reference Sans Serif;}
+h2.he1{font-family: Calibri;
+      color: orange ;       font-size: 25px;}
+li{font-family: Calibri;font-size: 20px;color:floralwhite}
+
+/*<image src="wp.png" style="display: block; margin-left: auto;margin-right: auto; background-color: #ffffff; width: 15%">*/

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+body{
+  background-color:rgb(251, 145, 255)
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-gap: 10px;
+  grid-template-columns: 300px 300px;
+  background-color: black;
+  padding: 10px;
+  height: 120px;
+  width: 610px;
+  transition: 2s;
+}
+
+.grid-container:hover{
+  height: 190px;
+  width: 610px;
+  grid-column-gap:5px;
+  grid-gap: 10px;
+}
+
+.grid-item {
+  background-color: yellow;
+  height:30px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: 2s;
+}
+
+.grid-container:hover .grid-item{
+  height:70px;
+  font-size: 60px;
+  background-color: red;
+  color: yellow;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center">Cascading Style Sheet</h1>
+
+<h2>Graphic effect using css property <i>Transition</i> and <i>Grid</i></h2>
+
+<div class="grid-container">
+  <div class="grid-item">Grid</div>
+  <div class="grid-item">Transition</div>
+  <div class="grid-item">Hover</div>  
+  <div class="grid-item">container</div>
+  
+</div>
+
+</body>
+</html>
