@@ -6,589 +6,67 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Dont get caught</h1>
-
-    <div>
-        <fieldset>
-            <legend>Fcfs algo </legend>
-            <pre>
-                <code>
-#include<stdio.h>
-
-struct fc {
-    int bst, wt, tat, exu;
-} p[10];
-
-main() {
-    int pro, i;
-    float awt = 0, atat = 0;
-
-    printf("FCFS PROCESS SCHEDULING ALGORITHM\n");
-    printf("\nENTER NUMBER OF PROCESS\n");
-    scanf("%d", &pro);
-
-    printf("\nENTER BURST TIME FOR EACH PROCESS\n");
-    for (i = 0; i < pro; i++) {
-        scanf("%d", &p[i].bst);
-    }
-    p[i].exu = 0;
-    for (i = 0; i < pro; i++) {
-        p[i + 1].exu = (p[i].exu + p[i].bst);
-    }
-    for (i = 0; i < pro; i++) {
-        p[i].wt = p[i].exu;
-        p[i].tat = p[i].wt + p[i].bst;
-    }
-    for (i = 0; i < pro; i++) {
-        awt = awt + p[i].wt;
-        atat = atat + p[i].tat;
-    }
-
-    printf("\nPROCESS   BRUSTTIME    WAITINGTIME  TURNARROUNDTIME");
-    for (i = 0; i < pro; i++) {
-        printf("\np %d       %d           %d           %d        %d ", i + 1, p[i].bst, p[i].wt, p[i].tat);
-    }
-
-    printf("\nAVERAGE WAITING TIME= %f", awt / pro);
-    printf("\nAVERAGE TURNAROUND TIME=%f", atat / pro);
-
-    return 0;
-}
-                </code>
-            </pre>
-        </fieldset>
-    </div>
-
-    <!-- code 2 -->
-    <div>
-        <fieldset>
-            <legend>sjf</legend>
-            <pre>
-                <code>
-#include <stdio.h>
-
-struct fc {  
-    int bst,wt,tat,exu,pro; 
-} p[10],a[10],b[10]; 
-
-main() {  
-    int n,i,j,t,o,k;  
-    float awt=0,atat=0;  
-
-    printf("************ARRIVALTIME IS ZERO**************"); 
-    printf("\nENTER NUMBER OF PROCESS\n");  
-    scanf("%d",&n);  
-    printf("\nENTER BURST TIME FOR EACH PROCESS\n");  
-    for(i=0;i< n;i++)   
-        scanf("%d",&p[i].bst); 
-
-    for(i=0;i< =n;i++)    
-    { 
-        a[i].pro=i+1;    
-        a[i].bst=p[i].bst;  
-    }  
-
-    for(i=0;i<n;i++)  
-    {    
-        for(j=i+1;j<n;j++)  
-        {     
-            if(a[i].bst>a[j].bst)  
-            {
-                t=a[i].bst;  
-                a[i].bst=a[j].bst;   
-                a[j].bst=t;       
-                k=a[i].pro;   
-                a[i].pro=a[j].pro;      
-                a[j].pro=k;   
-            }
-        }
-    } 
-
-    a[0].exu=0; 
-    for(i=0;i< n;i++)   
-        a[i+1].exu=a[i].exu+a[i].bst; 
-
-    for(i=0;i< n;i++)  
-    {  
-        a[i].wt=a[i].exu;  
-        a[i].tat=a[i].wt+a[i].bst;  
-    }  
-
-    for(i=0;i< n;i++)  
-    {  
-        awt=awt+a[i].wt;  
-        atat=atat+a[i].tat;  
-    }  
-
-    printf("\nPROCESS BRUSTTIME  WAITINGTIME  TURNARROUNDTIME");  
-    for(i=0;i< n;i++)  
-    { 
-        printf("\n p %d       %d           %d            %d ",a[i].pro,a[i].bst,a[i].wt,a[i].tat);  
-    }  
-
-    printf("\nAVERAGE WAITING TIME= %f",awt/n); 
-    printf("\nAVERAGE TURNARROUND TIME=%f",atat/n); 
-
-    return 0;  
-}
-                </code>
-            </pre>
-        </fieldset>
-    </div>
-
-    <div>
-        <fieldset>
-            <legend>
-                priority
-            </legend>
-            <pre>
-                <code>
-                    #include<stdio.h> 
-                        struct fc {  
-                        int 
-                        bst,wt,tat,exu,pro,pr; 
-                        }p[10],a[10],b[10]; 
-                        main() {  
-                        int n,i,j,t,k,z;  float 
-                        awt=0,atat=0;  
-                        printf(" ************ PRIORITY SCHEDULING**************");  
-                        printf("\n*******LOW NUMBERS HAVE HIGH PRIORITY********");  
-                        printf("\nENTER NUMBER OF PROCESS\n");  scanf("%d",&n); 
-                        printf("\nENTER BURST TIME FOR EACH PROCESS\n");  
-                        for(i=0;i< n;i++)   scanf("%d",&p[i].bst);  
-                        printf("\nENTER  PRIORITY FOR EACH PROCESS\n");  
-                        for(i=0;i< n;i++)  
-                        scanf("%d",&p[i].pr);  
-                        for(i=0;i< n;i++)  
-                        {    
-                        a[i].pro=i+1;    
-                        a[i].bst=p[i].bst;    
-                        a[i].pr=p[i].pr;  
-                        }  
-                        for(i=0;i< n;i++)  
-                        {  
-                        for(j=i+1;j<n;j++)  
-                        {  
-                        if(a[i].pr>a[j].pr)  
-                        {         
-                        z=a[i].pr;         
-                        a[i].pr=a[j].pr;          
-                        a[j].pr=z;  
-                        t=a[i].bst;   
-                        a[i].bst=a[j].bst;   
-                        a[j].bst=t;    k=a[i].pro;   
-                        a[i].pro=a[j].pro;  
-                        a[j].pro=k;   
-                        }    }   }  
-                        a[0].exu=0; for(i=0;i< n;i++)   
-                        a[i+1].exu=a[i].exu+a[i].bst; 
-                        for(i=0;i< n;i++)  
-                        {  
-                        a[i].wt=a[i].exu;  
-                        a[i].tat=a[i].wt+a[i].bst;  
-                        }  
-                        for(i=0;i< n;i++)  
-                        {  
-                        awt=awt+a[i].wt;  
-                        atat=atat+a[i].tat;  
-                        }  
-                        printf("\n PROCESSES  BURSTTIME  PRIORITY   WAITINGTIME TURNARROUNDTIME");  
-                        for(i=0;i< n;i++)  
-                        {  
-                        printf("\np %d       %d           %d                 %d          %d ",a[i].pro,a[i].bst,a[i].pr,a[i].wt,a[i].tat);  
-                        } 
-                         
-                        
-                          
-                        printf("\nAVERAGE WAITING TIME= %f",awt/n);  
-                        printf("\nAVERAGE TURNARROUND TIME=%f",atat/n);
-                         return 0;  
-                        } 
-                </code>
-            </pre>
-        </fieldset>
-    </div>
-    <div>
-        <fieldset>
-            <legend>round robin</legend>
-            <pre>
-                <code>
-                    #include<stdio.h>  
-                        struct fc {  
-                        int bst,wt,tat,exu,n,ar; 
-                        }p[10],a[10],b[10]; 
-                        main()  
-                        {  int 
-                        pn,i,j,ts,t,x,y=0;  
-                        float awt=0,atat=0;  
-                        printf("\nENTER NUMBER OF PROCESS\n");  
-                        scanf("%d",&pn);  printf("\nENTER BURST TIME FOR EACH PROCESS\n");  
-                        for(i=0;i < pn;i++)  
-                        {  
-                        scanf("%d",&p[i].bst);  
-                        }  
-                        printf("\nENTER THE TIME SLICE :");  
-                        scanf("%d",&ts);  
-                        for(i=0;i < pn;i++)  
-                        {   
-                        a[i].bst=p[i].bst;   
-                        b[i].bst=p[i].bst;  
-                        }  
-                        for(i=0;i < pn;i++)  
-                        {  
-                        for(j=i+1;j < pn;j++)  
-                        {  
-                        if(a[i].bst > a[j].bst)  
-                        {  
-                        t=a[i].bst;   
-                        a[i].bst=a[j].bst;  
-                        a[j].bst=t;  
-                        }    }   }   x=a[pn-1].bst/ts;  
-                        for(j=0;j < x+5;j++)  
-                        {  
-                        for(i=0;i < pn;i++)  
-                        {    
-                        if(p[i].bst > ts)
-                            {      y=y+ts;      
-                        p[i].exu=y;      
-                        p[i].bst=p[i].bst-ts;   
-                             }  
-                           else if((p[i].bst > 0) && (p[i].bst< ts))  
-                            {     
-                        y=y+p[i].bst;     
-                        p[i].exu=y;  
-                            p[i].bst=0;  
-                           
-                            }   }  }  
-                        for(i=0;i< pn;i++)  
-                        {  
-                         p[i].wt=p[i].exu-b[i].bst;  
-                         p[i].tat=p[i].wt+b[i].bst;  
-                          
-                        }  
-                         for(i=0;i< pn;i++)  
-                         {  
-                         awt=awt+p[i].wt;  
-                        atat=atat+p[i].tat;  
-                         }  
-                         printf("\nPROCESS BRUSTTIME   WAITINGTIME    TURNARROUNDTIME");  
-                        for(i=0;i < pn;i++)  
-                         {  
-                         printf("\np %d       %d           %d           %d   ",i,b[i].bst,p[i].wt,p[i].tat);  
-                         }  
-                        printf("\nAVERAGE WAIRING TIME= %f",awt/pn);  
-                        printf("\nAVERAGE TURNARROUND TIME=%f",atat/pn);
-                         return 0;  
-                        }   
-                </code>
-            </pre>
-        </fieldset>
-    </div>
-
-    <div>
-        <fieldset>
-            <legend>
-                bankers
-            </legend>
-            <pre>
-                <code>
-                    #include<stdio.h> 
-                        struct file  
-                        { int all[10]; 
-                        int max[10]; 
-                        int 
-                        need[10]; 
-                        int flag;  
-                        };  
-                        void main()  
-                        {  
-                        struct file f[10];  
-                        int fl; int i, j, k, p, b, n, r, g, cnt=0, id, 
-                        newr;  
-                        int avail[10],seq[10];  
-                        clrscr(); printf("Enter number of processes -- "); 
-                        scanf("%d",&n); 
-                        printf("Enter number of resources -- ");  
-                        scanf("%d",&r); 
-                        for(i=0;i< n;i++)  
-                        { 
-                        printf("Enter details for P%d",i);
-                        printf("\nEnter allocation\t -- \t"); 
-                        for(j=0;j< r;j++) 
-                        scanf("%d",&f[i].all[j]); 
-                        printf("Enter Max\t\t -- \t"); 
-                        for(j=0;j< r;j++) 
-                        scanf("%d",&f[i].max[j]); 
-                        f[i].flag=0; }  
-                        printf("\nEnter Available Resources\t -- \t"); 
-                        for(i=0;i<r;i++) scanf("%d",&avail[i]); 
-                        printf("\nEnter New Request Details -- ");  
-                        printf("\nEnter pid \t -- \t"); 
-                        scanf("%d",& id); printf("Enter Request for Resources \t -- \t"); for(i=0;i < r;i++)  
-                        {  
-                        scanf("%d",& newr); 
-                        f[id].all[i] += newr; 
-                        avail[i]=avail[i] - newr;  
-                        } 
-                        for(i=0;i< n;i++) 
-                        { 
-                        for(j=0;j< r;j++) 
-                        {  
-                        f[i].need[j]=f[i].max[j];
-                        f[i].all[j]; if(f[i].need[j]< 0) 
-                        f[i].need[j]=0;  
-                        } } cnt=0; fl=0; 
-                        while(cnt!=n) { g=0; 
-                        for(j=0;j < n;j++) { 
-                        if(f[j].flag= =0) { b=0; 
-                        for(p=0;p < r;p++) { 
-                        if(avail[p]>=f[j].need[p]
-                         )  
-                        b=b+1; else b=b-1; } 
-                        if(b==r) { printf("\nP%d is visited",j); seq[fl++]=j; 
-                        f[j].flag=1; 
-                        for(k=0;k< r;k++) 
-                        avail[k]=avail[k]+f[j].all[k
-                         ];  
-                        cnt=cnt+1;  
-                        printf("(" ); 
-                        for(k=0;k < r;k++) 
-                        printf("%3d",avail[k]); 
-                         
-                                        
-                          
-                        printf(")")
-                         ; g=1; }  
-                        } } 
-                        if(g= =0
-                         )  
-                        {  
-                        printf("\n REQUEST NOT GRANTED -- DEADLOCK OCCURRED");  
-                        printf("\n SYSTEM IS IN UNSAFE STATE");  goto y;  
-                        }  
-                        }  
-                        printf("\n SYSTEM IS IN SAFE STATE"); 
-                        printf("\n The Safe Sequence is -- ("); 
-                        for(i=0;i< fl;i++) printf("P%d ",seq [i]);  
-                        printf(")"); y: 
-                         printf("\n Process\t\tAllocation\t\tMax\t\t\tNeed\n"); 
-                        for(i=0;i < n;i++)  
-                        { printf("P%d\t",i); 
-                        for(j=0;j< r;j++) 
-                        printf("%6d",f[i].all[j]); 
-                        for(j=0;j< r;j++) 
-                        printf("%6d",f[i].max[j]); 
-                        for(j=0;j< r;j++) 
-                        printf("% 6d",f [i].need[j])
-                         ;  
-                        printf("\ n");  
-                        } 
-                        getch();  
-                         }    
-                </code>
-            </pre>
-        </fieldset>
-    </div>
-
-<div>
-    <fieldset>
-      <legend>
-        dining philosoher
-      </legend>
-            <pre>
-                <code>
-                    #include <stdio.h>
-                        #include <stdlib.h>
-                        #include <pthread.h>
-                        #include <semaphore.h>
-                        #include <unistd.h>
-                        
-                        #define NUM_PHILOSOPHERS 5
-                        
-                        pthread_mutex_t forks[NUM_PHILOSOPHERS];
-                        sem_t semaphore;
-                        
-                        void *philosopher(void *arg) {
-                            int id = *(int *)arg;
-                            int left_fork = id;
-                            int right_fork = (id + 1) % NUM_PHILOSOPHERS;
-                        
-                            while (1) {
-                                printf("Philosopher %d is thinking.\n", id);
-                        
-                                sem_wait(&semaphore);
-                                pthread_mutex_lock(&forks[left_fork]);
-                                pthread_mutex_lock(&forks[right_fork]);
-                                sem_post(&semaphore);
-                        
-                                printf("Philosopher %d is eating.\n", id);
-                        
-                                pthread_mutex_unlock(&forks[left_fork]);
-                                pthread_mutex_unlock(&forks[right_fork]);
-                        
-                                printf("Philosopher %d is done eating.\n", id);
-                        
-                                // Sleep to simulate thinking and eating times
-                                usleep(rand() % 1000000);
-                            }
-                        }
-                        
-                        int main() {
-                            pthread_t philosophers[NUM_PHILOSOPHERS];
-                            int ids[NUM_PHILOSOPHERS];
-                        
-                            // Initialize mutexes and semaphore
-                            sem_init(&semaphore, 0, NUM_PHILOSOPHERS - 1);
-                            for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
-                                pthread_mutex_init(&forks[i], NULL);
-                            }
-                        
-                            // Create philosopher threads
-                            for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
-                                ids[i] = i;
-                                pthread_create(&philosophers[i], NULL, philosopher, &ids[i]);
-                            }
-                        
-                            // Wait for philosopher threads to finish (not normally done in a real program)
-                            for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
-                                pthread_join(philosophers[i], NULL);
-                            }
-                        
-                            // Clean up resources
-                            sem_destroy(&semaphore);
-                            for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
-                                pthread_mutex_destroy(&forks[i]);
-                            }
-                        
-                            return 0;
-                        }
-                        
-                </code>
-            </pre>
+    <h1>   Dependencies for installing selenium in maven</h1>
+    <pre><code>
+        &lt;dependencies&gt;
+          &lt;!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java --&gt;
+          &lt;dependency&gt;
+            &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+            &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+            &lt;version&gt;4.25.0&lt;/version&gt;
+          &lt;/dependency&gt;
         
-    </fieldset>
-</div>
+          &lt;!-- https://mvnrepository.com/artifact/com.aventstack/extentreports --&gt;
+          &lt;dependency&gt;
+            &lt;groupId&gt;com.aventstack&lt;/groupId&gt;
+            &lt;artifactId&gt;extentreports&lt;/artifactId&gt;
+            &lt;version&gt;5.1.2&lt;/version&gt;
+          &lt;/dependency&gt;
+        
+          &lt;!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports --&gt;
+          &lt;dependency&gt;
+            &lt;groupId&gt;com.relevantcodes&lt;/groupId&gt;
+            &lt;artifactId&gt;extentreports&lt;/artifactId&gt;
+            &lt;version&gt;2.41.2&lt;/version&gt;
+          &lt;/dependency&gt;
+        
+        &lt;/dependencies&gt;
+        </code></pre>
 
-<div>
-    <fieldset>
-        <legend>
-            fibbo
-        </legend>
+        <h1>Basic imports (works for reports too)</h1>
         <pre>
             <code>
-                #!/bin/bash
-
-# Function to calculate Fibonacci
-fibonacci() {
-    if [ "$1" -le 1 ]; then
-        echo "$1"
-    else
-        echo $(( $(fibonacci $(( $1 - 1 ))) + $(fibonacci $(( $1 - 2 ))) ))
-    fi
-}
-
-# Input: The position of the Fibonacci sequence to calculate
-read -p "Enter the position in the Fibonacci sequence: " position
-
-# Check if the input is a non-negative integer
-if [[ "$position" =~ ^[0-9]+$ ]]; then
-    result=$(fibonacci $position)
-    echo "The Fibonacci number at position $position is: $result"
-else
-    echo "Invalid input. Please enter a non-negative integer."
-fi
-
+                import com.aventstack.extentreports.ExtentReports;
+                import com.aventstack.extentreports.ExtentTest;
+                import com.aventstack.extentreports.Status;
+                
+                import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+                
+                import org.openqa.selenium.By;
+                import org.openqa.selenium.WebDriver;
+                import org.openqa.selenium.WebElement;
+                import org.openqa.selenium.chrome.ChromeDriver;
             </code>
         </pre>
-    </fieldset>
-
-</div>
-
-<div>
-    <fieldset>
-        <legend>
-            factorial
-        </legend>
+        <h1>template for report</h1>
         <pre>
             <code>
-                #!/bin/bash
+                static ExtentTest test;
+                static ExtentReports report;
+                
+                psvm 
 
-# Function to calculate factorial
-factorial() {
-    if [ "$1" -eq 0 ]; then
-        echo 1
-    else
-        echo $(( $1 * $(factorial $(( $1 - 1 ))) ))
-    fi
-}
-
-# Input: The number to calculate the factorial
-read -p "Enter a number to calculate its factorial: " num
-
-# Check if the input is a non-negative integer
-if [[ "$num" =~ ^[0-9]+$ ]]; then
-    result=$(factorial $num)
-    echo "The factorial of $num is: $result"
-else
-    echo "Invalid input. Please enter a non-negative integer."
-fi
-
+                    // Set up the path for the Spark report
+                    ExtentSparkReporter sparkReporter = new ExtentSparkReporter("E:\\results.html"); // Specify absolute path
+                    report = new ExtentReports();
+                    report.attachReporter(sparkReporter);
+            
+                    // Start test
+                    test = report.createTest("ExtentDemo");
+                    // automation code....
+                    test.log(Status.PASS, "Navigated to the specified URL");
+                    report.flush();
             </code>
         </pre>
-    </fieldset>
-</div>
-
-<div>
-    <fieldset>
-        <legend>
-            wordcount
-        </legend>
-        <pre>
-            <code>
-                #!/bin/bash
-
-# Input: File or text
-read -p "Enter the file name or input text: " input
-
-# Check if the input is a file
-if [ -f "$input" ]; then
-    # Count words in the file
-    word_count=$(wc -w < "$input")
-    echo "The number of words in $input is: $word_count"
-else
-    # Count words in the input text
-    word_count=$(echo "$input" | wc -w)
-    echo "The number of words in the input text is: $word_count"
-fi
-
-            </code>
-        </pre>
-    </fieldset>
-</div>
-
-<div>
-    <fieldset>
-        <legend>
-          string comparison
-        </legend>
-        <pre>
-            <code>
-                #!/bin/bash
-
-# Input: Two strings
-read -p "Enter the first string: " string1
-read -p "Enter the second string: " string2
-
-# Compare strings
-if [ "$string1" == "$string2" ]; then
-    echo "Strings are equal."
-else
-    echo "Strings are not equal."
-fi
-
-            </code>
-        </pre>
-    </fieldset>
-</div>
 </body>
 </html>
