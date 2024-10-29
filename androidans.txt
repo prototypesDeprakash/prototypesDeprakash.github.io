@@ -69,3 +69,53 @@ public class SecondActivity extends AppCompatActivity {
 
 Mainfest
 <activity android:name=".SecondActivity" />
+
+--------------------------------Book App----------------------------------------
+package com.example.recommending_books;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText etInput;
+    Button btnRecommend;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        etInput = findViewById(R.id.et_input);
+        btnRecommend = findViewById(R.id.btn_recommend);
+
+        btnRecommend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String inputText = etInput.getText().toString();
+                if (inputText.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter a genre or title", Toast.LENGTH_SHORT).show();
+                } else {
+                    String recommendation = getBookRecommendation(inputText);
+                    Toast.makeText(MainActivity.this, "Recommendation: " + recommendation, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private String getBookRecommendation(String input) {
+        // Simple example: Just return a static recommendation based on genre or title
+        if (input.equalsIgnoreCase("fiction")) {
+            return "The Great Gatsby by F. Scott Fitzgerald";
+        } else if (input.equalsIgnoreCase("science")) {
+            return "A Brief History of Time by Stephen Hawking";
+        } else {
+            return "Try 'To Kill a Mockingbird' by Harper Lee";
+        }
+    }
+}
