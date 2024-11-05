@@ -1,3 +1,32 @@
+
+Simple Reports
+
+package com.mypack;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.Status;
+public class reportmy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ExtentSparkReporter sr = new ExtentSparkReporter("E:\\myresult.html");
+		ExtentReports report = new ExtentReports();
+		report.attachReporter(sr);
+		ExtentTest test = report.createTest("Login test by prakash");
+		
+		test.log(Status.PASS, "you got passed");
+		test.log(Status.FAIL, "Got failed bro");
+		report.flush();
+	}
+
+}
+
+-----------------------------------------------------------------
+
+
+
 ans collab
 
 ----------------
