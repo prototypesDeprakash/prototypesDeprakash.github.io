@@ -37,6 +37,78 @@ Dependencies
         </dependencies>
 
 -----------------------------------------------------------------------------------------------------------------------------------------
+package testreport;
+import java.util.HashMap; 
+import java.util.Map; 
+import java.util.Scanner; 
+import org.openqa.selenium.chrome.ChromeDriver; 
+import org.openqa.selenium.chrome.ChromeOptions; 
+public class exp6 
+{ 
+public static void main(String[] args) 
+{ 
+//System.setProperty("webdriver.chrome.driver", "E:\\swathi\\chromedriver.exe"); 
+Scanner in = new Scanner(System.in); 
+System.out.println("Choose: \n 1.Incognito \n 2.Headless \n 3.Maximize \n 4.Disable Extensions \n 5.Notification"); 
+int n = in.nextInt(); 
+switch(n) 
+{ 
+case 1: incognito(); 
+break; 
+case 2: headless(); 
+break; 
+case 3: max(); 
+break; 
+case 4: extension(); 
+break; 
+case 5: notification(); 
+break; 
+} 
+} 
+public static void incognito() 
+{ 
+ChromeOptions options= new ChromeOptions(); 
+options.addArguments("--incognito"); 
+ChromeDriver driver = new ChromeDriver(options); 
+driver.get("http://google.co.in"); 
+String title = driver.getTitle(); 
+System.out.println("Page Title: "+title); 
+} 
+public static void max() 
+{ 
+ChromeOptions options = new ChromeOptions(); 
+options.addArguments("--start-maximized"); 
+ChromeDriver driver = new ChromeDriver(options); 
+driver.get("http://google.co.in"); 
+   
+} 
+public static void headless() 
+{ 
+ChromeOptions options = new ChromeOptions(); 
+options.addArguments("headless"); 
+ChromeDriver driver = new ChromeDriver(options); 
+driver.get("http://google.com"); 
+String title=driver.getTitle(); 
+System.out.println("Title of website is "+title); 
+} 
+public static void extension() 
+{ 
+ChromeOptions options = new ChromeOptions(); 
+options.addArguments("--disable-extension"); 
+ChromeDriver driver = new ChromeDriver(options); 
+driver.get("http://google.co.in"); 
+} 
+public static void notification() 
+{ 
+Map<String,Object> prefs = new HashMap<String,Object>(); 
+prefs.put("profile.default_content_setting_values.notifications", 1); 
+ChromeOptions options = new ChromeOptions(); 
+options.setExperimentalOption("prefs", prefs); 
+ChromeDriver driver=new ChromeDriver(options); 
+driver.get("http://google.co.in"); 
+} 
+}
+================================================================================
 
 
 
