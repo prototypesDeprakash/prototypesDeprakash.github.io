@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Activity Control</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    label, select, button { font-size: 1.1em; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>Digital-Twin-Builder Access control System </h1>
+
+  <p>Current Status: <span id="status">Loading...</span></p>
+
+  <label for="accessSelect">Set Access:</label>
+  <select id="accessSelect">
+    <option value="true">Allow Access</option>
+    <option value="false">Don't Allow Access</option>
+  </select>
+  <br/>
+  <button id="submitBtn">Configure</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBtm6ayUgEMbMvcFpXjfZM1wrMvlkVprg0",
+      authDomain: "securitysystem-bf9d5.firebaseapp.com",
+      databaseURL: "https://securitysystem-bf9d5-default-rtdb.firebaseio.com",
+      projectId: "securitysystem-bf9d5",
+      storageBucket: "securitysystem-bf9d5.firebasestorage.app",
+      messagingSenderId: "90415070876",
+      appId: "1:90415070876:web:6cd08acdca4e3777907759",
+      measurementId: "G-7SJL5MJ7YL"
+    };
+
+    // Initialize Firebase app and database
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const activityRef = ref(database, 'activity');
+
+    // DOM elements
+    const statusElement = document.getElementById('status');
+    const accessSelect = document.getElementById('accessSelect');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Listen for realtime updates to "activity"
+    onValue(activityRef, (snapshot) => {
+      const activityValue = snapshot.val();
+
+      if (typeof activityValue === 'boolean') {
+        statusElement.textContent = activityValue ? 'Access Granted (true)' : 'Access Denied (false)';
+        console.log('Realtime activity:', activityValue);
+
+        // Update dropdown to reflect current value without triggering events
+        accessSelect.value = activityValue.toString();
+      } else {
+        statusElement.textContent = 'Invalid data';
+        console.warn('Activity value is not boolean:', activityValue);
+      }
+    }, (error) => {
+      console.error('Failed to read activity:', error);
+      statusElement.textContent = 'Error loading status';
+    });
+
+    // On button click, update Firebase with the selected value
+    submitBtn.addEventListener('click', () => {
+      const selectedValue = accessSelect.value === 'true';
+
+      set(activityRef, selectedValue)
+        .then(() => {
+          console.log('Activity updated to:', selectedValue);
+          // Optional: You could give user feedback here
+        })
+        .catch((error) => {
+          console.error('Failed to update activity:', error);
+          alert('Failed to update activity status.');
+        });
+    });
+  </script>
+</body>
+</html>
